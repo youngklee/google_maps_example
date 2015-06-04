@@ -2,5 +2,5 @@
 
 ####usage
 ```
-/> python googlemaps.py
+/> python example.py
 ```
