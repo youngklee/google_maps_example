@@ -1,7 +1,7 @@
 import sys
 sys.path.append('..')
 
-from main.googlemaps import Elevation
+from services.googlemaps import Elevation
 
 example1 = Elevation()
 example1.fetch({'latitude':39., 'longitude':-104.})
