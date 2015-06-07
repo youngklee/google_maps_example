@@ -1,9 +1,12 @@
 # google_maps_example
 
-####summary
-This is a first attempt at a thin abstraction layer over web services that provide public domain data over HTTP. The example uses [Google Maps elevation API](https://developers.google.com/maps/documentation/elevation/).
+####Summary
+This is a first attempt at a thin abstraction layer over web services that provide public domain data over HTTP. 
 
-####running the example
+####Example 1
+The example uses [Google Maps elevation API](https://developers.google.com/maps/documentation/elevation/).
+
 ```
-/> python example.py
+/> cd examples/
+/> python example1.py
 ```
