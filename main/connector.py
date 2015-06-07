@@ -2,6 +2,7 @@ import json
 import requests
 from string import Template
 import xml.etree.ElementTree as ET
+import time
 
 from results import ResultSet, ResultRow
 from parameter import Input
@@ -33,12 +34,12 @@ class Connector(object):
         self.max_requests = 1e16
         self.made_requests = 0
 
-    def throttle(self, f):
+    def throttle(f):
         """wrapper function for throttling web service requests"""
-        def wrapper(*args, **kwargs):
+        def wrapper(self, *args, **kwargs):
             if self.made_requests < self.max_requests:
                 time.sleep(self.delay)
-                f(*args, **kwargs)
+                f(self, *args, **kwargs)
                 self.made_requests += 1
             else:
                 raise Exception, 'maximum request limit reached'

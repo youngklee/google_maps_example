@@ -10,6 +10,7 @@ class Elevation(Connector):
 
     def __init__(self):
         super(Elevation, self).__init__()
+        self.set_throttle()
         self.set_url(GoogleElevation)
         self.set_parser('json')
 
