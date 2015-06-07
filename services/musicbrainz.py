@@ -1,5 +1,5 @@
-from connector import Connector
-from parameter import Input, Output
+from ..main.connector import Connector
+from ..main.parameter import Input, Output
 from url import MusicBrainz
 
 class Music(Connector):
