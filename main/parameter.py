@@ -1,8 +1,8 @@
-class OutputParameter(object):
+class Output(object):
     def __init__(self, iotype):
         self.iotype = iotype
 
-class URLParameter(object):
+class Input(object):
 
     def __init__(self, iotype, required=True, min=None, max=None, default=None):
             self.iotype = iotype

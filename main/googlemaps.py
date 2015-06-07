@@ -1,25 +1,22 @@
-import json
-from string import Template
-
-from parameter import URLParameter, OutputParameter
-from url import GoogleElevation
 from connector import Connector
+from parameter import Input, Output
+from url import GoogleElevation
 
 class Elevation(Connector):
 
-    latitude = URLParameter(iotype='float', required=True, min=-90., max=90.)
-    longitude = URLParameter(iotype='float', required=True, min=-180., max=180.)
-    elevation = OutputParameter(iotype='float')
+    latitude = Input(iotype='float', required=True, min=-90., max=90.)
+    longitude = Input(iotype='float', required=True, min=-180., max=180.)
+    elevation = Output(iotype='float')
 
     def __init__(self):
         super(Elevation, self).__init__()
-        self.url = Template(GoogleElevation)
+        self.set_url(GoogleElevation)
         self.set_parser('json')
 
     def parse_results(self, results):
         for row in results['results']:
-            result_row = {'elevation': row['elevation']}
-            self.results.append(result_row)
+            result = {'elevation': row['elevation']}
+            self.results.add(result)
 
 if __name__ == '__main__':
 
@@ -27,6 +24,6 @@ if __name__ == '__main__':
     test.fetch({'latitude':39., 'longitude':-104.})
     test.fetch({'latitude':39., 'longitude':-110.})
 
-    for i in test.results:
+    for i in test.results.get_iter():
         print i
     
