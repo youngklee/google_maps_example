@@ -18,3 +18,11 @@ The example uses [OpenWeatherMap API](http://openweathermap.org/api/).
 /> cd examples/
 /> python example2.py
 ```
+
+####Example 3
+The example uses [GeoNames API](http://www.geonames.org/export/web-services.html).
+
+```
+/> cd examples/
+/> python example3.py
+```
