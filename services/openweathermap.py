@@ -6,7 +6,7 @@ class Weather(Connector):
 
     latitude = Input(iotype='float', required=True, min=-90., max=90.)
     longitude = Input(iotype='float', required=True, min=-180., max=180.)
-    elevation = Output(iotype='float')
+    # elevation = Output(iotype='float')
 
     def __init__(self):
         super(Weather, self).__init__()
@@ -27,4 +27,3 @@ if __name__ == '__main__':
 
     for i in test.results.get_iter():
         print i
-    
